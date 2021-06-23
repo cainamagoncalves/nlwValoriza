@@ -1,25 +1,13 @@
-import express, { response } from "express"
+import "reflect-metadata";
+import express from "express";
+import { router } from "./routes"
 
-// @types/express
-
-/**
- * GET => BUSCA DE INFORMAÇÃO,
- * POST => CRIAR/INSERIR UMA INFORMAÇÃO,
- * PUT => ALTERAR INFORMAÇÃO,
- * DELETE => REMOVER INFORMAÇÃO,
- * PATCH => ALTERAR UMA INFORMAÇÃO ESPECÍFICA
- */
+import "./database";
 
 const app = express()
 
-app.get("/teste", (req, res) => {
-    // REQUEST => ENTRANDO
-    // RESPONDE => SAINDO
-    return res.send("Olá NLW")
-})
+app.use(express.json())
 
-app.post("/teste-post", (req, res) => {
-    return res.send("Olá NLW método post")
-})
+app.use(router)
 
 app.listen(3001, () => console.log('Server is Runing on port 3001'))
