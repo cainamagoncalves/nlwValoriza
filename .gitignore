@@ -1,3 +1,7 @@
 # DEPENDENCIAS
 
 /node_modules
+
+# LOGS
+
+yarn-error.log

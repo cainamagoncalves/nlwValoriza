@@ -1,6 +1,10 @@
 import { Request, Response, NextFunction } from "express"
 
-export function ensureAdmin(request: Request, response: Response, next: NextFunction) {
+export function ensureAdmin(
+  request: Request, 
+  response: Response, 
+  next: NextFunction
+  ) {
   // VERIFICAR SE USUÁRIO ADMIN
   const admin = true;
 
